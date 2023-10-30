@@ -1,5 +1,5 @@
 <?php
-    require('../libs/Smarty.cass.php');
+    require '../smarty-4.3.4/libs/Smarty.class.php';
     $newSmarty = new Smarty();
 
     $newSmarty->setTemplateDir('templates/');
@@ -7,12 +7,15 @@
     $newSmarty->setConfigDir('configs/');
     $newSmarty->setCacheDir('cache/');
 
-    $newSmarty -> display('index.tpl');
-
-
-
-
-
-
-
-?>
+    
+    $nombre = "";
+    if (isset($_GET['nombre'])) {
+        $nombre = $_GET['nombre'];
+    }else {
+        $nombre = "invitado";
+    }
+    
+    $newSmarty-> assign('nombre', $nombre);
+    
+    $newSmarty -> display('templates/index.tpl');
+    ?>
