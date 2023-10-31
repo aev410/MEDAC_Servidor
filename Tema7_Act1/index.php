@@ -1,5 +1,5 @@
 <?php
-    require '../smarty-4.3.4/libs/Smarty.class.php';
+    require '../smarty/libs/Smarty.class.php';
     $newSmarty = new Smarty();
 
     $newSmarty->setTemplateDir('templates/');
@@ -17,5 +17,5 @@
     
     $newSmarty-> assign('nombre', $nombre);
     
-    $newSmarty -> display('templates/index.tpl');
+    $newSmarty -> display('index.tpl');
     ?>
